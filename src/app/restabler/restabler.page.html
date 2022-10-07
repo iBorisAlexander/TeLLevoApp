@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar class="titulo_arriba">
+    <ion-title class="titulo">Restablecer Contraseña</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="swing-in-left-fwd" >
+  <div class="img-cand">
+    <img  src="assets/images/logo.png" alt="LogoDuoc">
+    <img class="img" width ="50" height="50" src="assets/images/candado.png" alt="candado">
+  </div>
+  <div class="recuperar">
+    <ion-item class="item">
+      <ion-label class="ingrese" position="floating" > Ingrese Usuario: </ion-label>
+      <ion-input type="text" [(ngModel)]="data.correo"></ion-input>
+    </ion-item>
+    <ion-button color="warning" class="boton" (click)="presentAlert()" (click)="home()">Recuperar</ion-button>
+
+
+  </div>
+
+
+</ion-content>
