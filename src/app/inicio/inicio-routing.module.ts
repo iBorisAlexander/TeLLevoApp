@@ -7,12 +7,15 @@ import { InicioPage } from './inicio.page';
 const routes: Routes = [
   {
     path: '',
-    component: InicioPage
-  },
-  {
-    path:'mapbox',
-    component:MapboxComponent
+    component: InicioPage,
+    children:[
+      {
+        path:'mapbox',
+        component:MapboxComponent
+      }
+    ]
   }
+
 ];
 
 @NgModule({
