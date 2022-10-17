@@ -17,7 +17,7 @@ export class PlacesService {
    }
 
   public async getUserLocation(): Promise<[number,number]>{
-    return  new Promise (( resolve,rejact) => {
+    return  new Promise (( resolve,reject) => {
       navigator.geolocation.getCurrentPosition(
         ({coords}) => {
           this.useLocation = [coords.longitude, coords.latitude];
@@ -26,6 +26,7 @@ export class PlacesService {
         (err) => {
           alert('no se pudo obtener la geolocalizacion')
           console.log(err);
+          reject(); 
         }
       )
     })
