@@ -1,60 +1,21 @@
-<ion-header>
-  <ion-toolbar class="titulo_arriba">
-    <ion-title>TeLLevoApp</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="inicio"></ion-back-button>
-    </ion-buttons>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ej01 - Components
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="mapbox" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="mapbox">
+        <ion-icon name="musical-notes-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="dos">
+        <ion-icon name="musical-notes-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="animacioninicio">
-  <img src="https://www.duoc.cl/wp-content/themes/wordpress-duoc-cl/images/logo-duoc.svg" alt="LogoDuoc">
-  <div class="mat-tab">
-    <mat-tab-group mat-align-tabs="center">
-      <mat-tab label="Iniciar Viaje " animationDuration="5000ms" >
-        <div class="viaje" >
-          <form [formGroup] = "viajero">
-            <ion-item>
-              <div id="mapa-mapbox">
-                
-              </div>
-            </ion-item>
-          </form>
-        </div>
-      </mat-tab>
-      <mat-tab class="conductor" label="Conductor">
-        <div class="conductor" >
-          <form class="conductor" [formGroup]="conductor" (ngSubmit)="guardarDatos()">
-            <ion-item class="item">
-              <ion-label class="datos" position="floating">Nombre:</ion-label>
-              <ion-input formControlName="nombre"></ion-input>
-            </ion-item>
-            <ion-item class="item">
-              <ion-label class="datos" position="floating">Apellido:</ion-label>
-              <ion-input formControlName="apellido"></ion-input>
-            </ion-item>
-            <ion-item class="item">
-              <ion-label class="datos" position="floating">Matricula:</ion-label>
-              <ion-input formControlName="matricula"></ion-input>
-            </ion-item>
-            <ion-item class="item">
-              <ion-label class="datos" position="floating">Capacidad:</ion-label>
-              <ion-input formControlName="capacidad"></ion-input>
-            </ion-item>
-            <ion-item class="item">
-              <ion-label class="datos" position="floating">Destino:</ion-label>
-              <ion-input formControlName="destino"></ion-input>
-            </ion-item>
-            <ion-item class="item">
-              <ion-label class="datos" position="floating">Tarifa:</ion-label>
-              <ion-input formControlName="tarifa"></ion-input>
-            </ion-item>
-            <ion-button color="warning" class="boton"  (click)="limpiar()">Limpiar</ion-button>
-            <ion-button color="warning" class="boton" slot="icon-only">Guardar</ion-button>
-          </form>
-      </div> 
-        
-      </mat-tab>
-    </mat-tab-group>
-  </div>  
+<ion-content>
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>

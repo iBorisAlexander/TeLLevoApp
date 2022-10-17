@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -7,11 +8,22 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./inicio.page.scss'],
 })
 export class InicioPage implements OnInit {
+  
 
-  constructor() { }
+  constructor(private router:Router) {
+    this.router.navigate(['inicio/mapbox']);
+  }
+  segmentChanged($event){
+    console.log($event);
+    let direccion=$event.detail.value;
+    console.log(direccion);
+    this.router.navigate(['inicio/'+direccion]);
+  }
 
   ngOnInit() {
   }
+
+  
 
   user = {
     usuario: "",
